@@ -1,1 +1,1 @@
-# samsa
+# graphiql-app
