@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://volasau.github.io/samsa",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -13,11 +14,13 @@
     "lint-staged": "lint-staged",
     "prepare": "husky install",
     "test": "vitest",
-    "coverage": "vitest run --coverage"
+    "coverage": "vitest run --coverage",
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "pre-push": "test"
     }
   },
   "dependencies": {
@@ -52,6 +55,7 @@
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
+    "gh-pages": "6.1.1",
     "husky": "^8.0.3",
     "jsdom": "^23.0.1",
     "lint-staged": "^15.0.2",
